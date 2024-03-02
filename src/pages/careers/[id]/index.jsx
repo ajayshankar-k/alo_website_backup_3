@@ -6,7 +6,7 @@ import Button from "@/components/common/button";
 import BaseUrl from "@/pages/api/BaseUrl";
 import bullets from '@/styles/assets/170.svg'
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const { id } = router.query;
 
@@ -107,7 +107,7 @@ const index = () => {
             <ul>
             {careerForm && careerForm.jobDescription && careerForm.jobDescription.responsibilities ?
                 careerForm.jobDescription.responsibilities.map((item, index) => (
-                  <div className="career_responsibilities_bullets">
+                  <div key={index} className="career_responsibilities_bullets">
                     <img src={bullets.src} alt={bullets.src} />
                     <li key={index}>{item}</li>
                   </div>
@@ -126,7 +126,7 @@ const index = () => {
             <ul>
             {careerForm && careerForm.jobDescription && careerForm.jobDescription.requirements ?
                 careerForm.jobDescription.requirements.map((item, index) => (
-                  <div className="career_responsibilities_bullets">
+                  <div key={index} className="career_responsibilities_bullets">
                     <img src={bullets.src} alt={bullets.src} />
                     <li key={index}>{item}</li>
                   </div>
@@ -159,4 +159,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
