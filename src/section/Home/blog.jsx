@@ -13,7 +13,7 @@ const Blog = () => {
             <h3>Journey into Thoughtful Perspectives </h3>
             <h2>Blogs</h2>
             <div className="blog-child">
-                <Link href="/5Gs-potential">    
+                <Link href="/5Gs-potential" target='__'>    
                     <div className="blog-split">
                         <div className="blog-card">
                             <div className='blog_image'>
@@ -30,7 +30,7 @@ const Blog = () => {
                 
                 
 
-                <Link href="/Alo-hub">
+                <Link href="/Alo-hub" target='__'>
                     <div className="blog-split">
                         <div className="blog-card">
                             <div className='blog_image'>
@@ -45,7 +45,7 @@ const Blog = () => {
                     </div>
                 </Link>
 
-                <Link href="/Alo-invoice">
+                <Link href="/Alo-invoice" target='__'>
                     <div className="blog-split">
                         <div className="blog-card">
                             <div className='blog_image'>
@@ -60,7 +60,7 @@ const Blog = () => {
                     </div>
                 </Link>
 
-                <Link href="/fast-x">
+                <Link href="/fast-x" target='__'>
                     <div className="blog-split">
                         <div className="blog-card">
                             <div className='blog_image'>
