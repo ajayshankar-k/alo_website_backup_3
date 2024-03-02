@@ -2385,6 +2385,9 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
 .job {
   background-color: #f9f9f9;
   padding: 100px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .job h2 {
@@ -2421,12 +2424,12 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
 }
 
 .job .job-blog {
-  margin: auto;
-  max-width: 75vw;
+  width: 75vw;
 }
 
 .job .job-blog .job-split {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   gap: 40px;
   justify-content: center;
   margin-bottom: 40px;
@@ -2458,12 +2461,37 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
 .job .job-blog .job-split .job-one {
   border-radius: 10px;
   background: #FFEBEB;
-  width: 100%;
+  width: 20vw;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 35vh;
+  height: 200px;
   justify-content: space-between;
+}
+
+@media screen and (max-width:992px) {
+  .job .job-blog .job-split .job-one{
+    width: 25vw;
+  }
+  
+}
+@media screen and (max-width:768px) {
+  .job .job-blog .job-split{
+    grid-template-columns: auto auto;
+  }
+  .job .job-blog .job-split .job-one{
+    width: 35vw;
+  }
+  
+}
+
+@media screen and (max-width:575px){
+  .job .job-blog .job-split{
+    grid-template-columns: auto ;
+  }
+  .job .job-blog .job-split .job-one{
+    width: 80vw;
+  }
 }
 
 .job .job-blog .job-split .job-two {
@@ -2525,6 +2553,7 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
+  color: black;
 }
 
 .job .job-blog .job-split .job-one:hover{
