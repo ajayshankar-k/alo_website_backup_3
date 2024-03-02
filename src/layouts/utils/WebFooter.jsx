@@ -49,12 +49,18 @@ const WebFooter = () => {
                         <li><HyperLink href="/" text="Home" /></li>
                         <li><HyperLink href="/about-us" text="About Us" /></li>
                         <li><HyperLink href="/careers" text="Careers" /></li>
-                        <li><HyperLink href="/events" text="Events" /></li>
-                        
                         <li><HyperLink href="/faq" text="Faq" /></li>
                         <li><HyperLink href="/privacy-policy" text="Privacy Policy" /></li>
                         <li><HyperLink href="/terms-condition" text="Terms and Condition" /></li>
                         <li><HyperLink href="/contact-us" text="Contact Us" /></li>
+                    </ul>
+                </div>
+                <div className="footer-content">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><HyperLink href="/about-us" text="Our Story" /></li>
+                        <li><HyperLink href="/events" text="Events" /></li>
+                        
                     </ul>
                 </div>
                 <div className="footer-content">
