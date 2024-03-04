@@ -6289,11 +6289,22 @@ mobile app crafting section end */
 
 .applynow_form{
   width: 100%;
-  background: #FFEEEE;
+  /* background: #FFEEEE; */
   width: 100%;
   padding: 50px 0px;
   display: flex;
   justify-content: center;
+}
+.applynow_form_bg{
+  z-index: -1;
+  background: #FFEEEE;
+  width: 100%;
+  position: absolute;
+  height: 50vh;
+}
+
+.applynow_form_container{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
 }
 
 .applynow_Form .resume_upload>input {

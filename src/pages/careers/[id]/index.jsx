@@ -54,9 +54,9 @@ const Index = () => {
               if (formData.experience.trim() !== "") {
                 if (formData.address.trim() !== "") {
                   if (formData.resume) {
-                    // const response = await BaseUrl.post('/career/send', formData);
+                    const response = await BaseUrl.post('/career/send', formData);
                     toast.success("Form submitted successfully");
-                    console.log(formData)
+                    // console.log(formData)
                     setFormData({
                       name: "",
                       email: "",
@@ -193,9 +193,7 @@ const Index = () => {
   }
 
   const [careerForm,setCareerForm] = useState([])
-  const handleClick = () =>{
-    console.log(careerForm.jobDescription.summary)
-  }
+  
 
   useEffect(()=>{
     const careerApi = async() =>{
@@ -209,6 +207,20 @@ const Index = () => {
   }
   careerApi()
   },[id])
+
+  const [finish, setFinish] = useState(false);
+
+  useEffect(() => {
+    if (router.query.page === "scroll" || finish){
+      const scrollTarget = document.getElementById('applynow_form')
+    if (scrollTarget) {
+      scrollTarget.scrollIntoView({
+        behavior: "smooth",
+      });
+      setFinish(false)
+    }
+  }
+  }, [router, finish]);
 
   return (
     <Fragment>
@@ -259,7 +271,7 @@ const Index = () => {
           <div className="applynow_banner_leftblock">
             <h1>Careers - Job role</h1>
             <h2>{careerForm ? careerForm.jobRole : "Loading..."}</h2>
-            <Button onClick={handleClick} label="Apply now" />
+            <Button onClick={() => setFinish(true)} label="Apply now" />
           </div>
           <div className="applynow_banner_rightblock">
             <div className="applynow_banner_exp">
@@ -320,13 +332,16 @@ const Index = () => {
         </div>
       </div>
       
-      <div className="applynow_form">
+      <div className="applynow_form_bg">
+
+     </div>
+      <div className="applynow_form" id="applynow_form">
           <div className="applynow_form_container">
             <h2>Apply Now</h2>
             <div className="applynow_Form">
               <input onChange={handleChangeInput} value={formData.name} name="name" placeholder="Full Name"/><br/>
               <input onChange={handleChangeInput} value={formData.email} name="email" placeholder="Email"/><br/>
-              <input onChange={handleChangeInput} value={formData.mobileNo} name="mobileNo" placeholder="Phone Number"/><br/>
+              <input onChange={handleChangeInput} value={formData.mobileNo} maxLength='15' name="mobileNo" placeholder="Phone Number"/><br/>
               <input onChange={handleChangeInput} value={formData.appliedRole} name="appliedRole" placeholder="Applying For"/><br/>
               <input onChange={handleChangeInput} value={formData.experience} name="experience" placeholder="Experience"/><br/>
               <input onChange={handleChangeInput} value={formData.address} name="address" placeholder="Address"/><br/>
