@@ -4722,6 +4722,9 @@ mobile app crafting section end */
   .webdev_banner_leftblock h2{
     font-size: 35px;
   }
+  .webdev_banner_leftblock p{
+    font-size: 18px;
+  }
   
   
 }
@@ -4731,7 +4734,7 @@ mobile app crafting section end */
   }
   .webdev_banner_leftblock h1{
     font-size: 23px !important;
-    
+
   }
   
 }
