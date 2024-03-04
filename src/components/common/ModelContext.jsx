@@ -6,7 +6,8 @@ const ModalContext = createContext();
 export const ModalProvider = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => {
+  const openModal = (e) => {
+    e.preventDefault();
     setModalOpen(true);
   };
 

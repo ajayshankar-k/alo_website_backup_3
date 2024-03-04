@@ -10,9 +10,9 @@ const Banner = () => {
     <div className="webdev_banner">
       <div className="webdev_banner_container">
         <div className="webdev_banner_leftblock">
-          <h2>Website Development</h2>
+          <h1>Website Development</h1>
           <div className="webdev_banner_title">
-            <h1>Thinking of Enhancing Your Online Presence? Try Our <span>Web Solutions</span></h1>
+            <h2>Thinking of Enhancing Your Online Presence? Try Our <span>Web Solutions</span></h2>
           </div>
           <p>
             We transform concepts into captivating web realities. Harness the

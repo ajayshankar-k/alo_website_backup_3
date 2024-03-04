@@ -8,12 +8,12 @@ const Banner = () => {
   return (
     <div className="mobile_app_banner">
       <div className="mobile_app_container">
-        <h2>Mobile App Development</h2>
+        <h1>Mobile App Development</h1>
         <div className="mobile_app_banner_title">
-          <h1>Transforming Ideas into</h1>
-          <h1 className="mobile_app">
+          <h2>Transforming Ideas into</h2>
+          <h2 className="mobile_app">
             Innovative <div>Mobile Apps</div>
-          </h1>
+          </h2>
         </div>
         <p>
           Welcome to Alo Infotech, your go-to destination for unparalleled

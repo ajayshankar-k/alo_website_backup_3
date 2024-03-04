@@ -8,11 +8,11 @@ const Banner = () => {
   return (
     <div className="blockchain_banner">
       <div className="blockchain_banner_container">
-        <h2>Block chain Development</h2>
-        <h1>
+        <h1>Block chain Development</h1>
+        <h2>
           Experience a New Level of Security Excellence with Our Tailored{" "}
           <span>Blockchain Development Services</span>
-        </h1>
+        </h2>
         <p>
           Starting a new business or scaling up an enterprise? Look no further –
           our secure and reliable custom blockchain development services are

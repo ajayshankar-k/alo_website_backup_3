@@ -7,7 +7,7 @@ const index = () => {
   return (
     <Fragment>
         <Head>
-        <title>Alo Info-Tech - IT Consulting </title>
+        <title>Alo Info-Tech - Products and Trials </title>
         <meta name="theme-color" content="#4CAAED" />
         <meta
           name="keywords"

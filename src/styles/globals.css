@@ -2798,6 +2798,13 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
   padding: 70px 0px;
 }
 
+.privacy_container{
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 20px;
+  border-left: 5px solid #009DFF;
+}
+
 .condition h1 {
   font-size: 35px;
   font-weight: 600;
@@ -4360,10 +4367,10 @@ mobile app crafting section end */
   
 }
 @media screen and (max-width:575px) {
-  .mobile_app_banner .mobile_app_container h1{
+  .mobile_app_banner .mobile_app_container h2{
     font-size: 45px;
   }
-  .mobile_app_banner .mobile_app_container h2{
+  .mobile_app_banner .mobile_app_container h1{
     font-size: 25px;
   }
   .mobile_app_banner .mobile_app_container p{
@@ -4387,10 +4394,10 @@ mobile app crafting section end */
 }
   
 @media screen and (max-width:414px) {
-  .mobile_app_banner .mobile_app_container h1,  .crafting_section .crafting_container h2{
+  .mobile_app_banner .mobile_app_container h2,  .crafting_section .crafting_container h2{
     font-size: 35px;
   }
-  .mobile_app_banner .mobile_app_container h2,.crafting_section .crafting_container h3{
+  .mobile_app_banner .mobile_app_container h1,.crafting_section .crafting_container h3{
     font-size: 20px;
   }
   .crafting_section .crafting_container{
@@ -4432,7 +4439,7 @@ mobile app crafting section end */
   gap: 50px;
 }
 
-.webdev_banner_leftblock h2{
+.webdev_banner_leftblock h1{
   font-size: 32px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -4446,7 +4453,7 @@ mobile app crafting section end */
   cursor: pointer;
   font-weight: 500;
 }
-.webdev_banner_leftblock h1{
+.webdev_banner_leftblock h2{
   font-size: 60px;
   font-weight: 500;
 }
@@ -4694,7 +4701,7 @@ mobile app crafting section end */
 /* webdev media query start */
 
 @media screen and (max-width:1200px){
-  .webdev_process_title,.webdev_banner_leftblock h1,.webdev_banner .webdev_banner_container .webdev_banner_title span,.webdev_services_title h2{
+  .webdev_process_title,.webdev_banner_leftblock h2,.webdev_banner .webdev_banner_container .webdev_banner_title span,.webdev_services_title h2{
     font-size: 50px;
     font-weight: 500;
   }.your_growth_rightblock h2{
@@ -4709,15 +4716,28 @@ mobile app crafting section end */
     margin-bottom: 40px;
   }
 }
+
+@media screen and (max-width:575px) {
+  .webdev_banner_leftblock h2{
+    font-size: 35px;
+  }
+  
+}
+@media screen and (max-width:414px) {
+  .webdev_banner_leftblock h2{
+    font-size: 30px;
+  }
+  
+}
 @media screen and (max-width:992px){
-  .webdev_process_title,.webdev_banner_leftblock h1,.webdev_banner .webdev_banner_container .webdev_banner_title span,.webdev_services_title h2{
+  .webdev_process_title,.webdev_banner_leftblock h2,.webdev_banner .webdev_banner_container .webdev_banner_title span,.webdev_services_title h2{
     font-size: 40px;
     font-weight: 500;
   }
   .your_growth_container{
     height: 60vw;
   }
-  .webdev_banner_leftblock h2{
+  .webdev_banner_leftblock h1{
     font-size: 25px;
     font-weight: 500;
   }
@@ -4803,7 +4823,7 @@ mobile app crafting section end */
   text-align: center;
 }
 
-.blockchain_banner_container h2{
+.blockchain_banner_container h1{
   text-align: center;
   font-size: 32px;
   font-weight: 400;
@@ -4827,7 +4847,7 @@ mobile app crafting section end */
 
 }
 
-.blockchain_banner_container h1{
+.blockchain_banner_container h2{
   width:  50vw;
   font-size: 48px;
   font-weight: 500;
@@ -5040,7 +5060,7 @@ mobile app crafting section end */
   
 }
 @media screen and (max-width:768px) {
-  .blockchain_banner_container h1,.blockchain_banner_container p{
+  .blockchain_banner_container h2,.blockchain_banner_container p{
     width: 100%;
   }
   .blockchain_banner{
@@ -5381,11 +5401,15 @@ mobile app crafting section end */
   .aiservices_container h2 {
     font-size: 40px;
   }
+  .ai_banner_container h2{
+    font-size: 35px;
+  }
+  
 }
 
 @media screen and (max-width:414px){
   .ai_banner_container h2{
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -5826,7 +5850,8 @@ mobile app crafting section end */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 18px;
+  margin-bottom: 8px;
 
 }
 
@@ -5856,6 +5881,7 @@ mobile app crafting section end */
   font-size: 15px;
   margin-bottom: 10px;
   opacity: 0.8;
+  padding: 0px 14px;
 }
 
 
