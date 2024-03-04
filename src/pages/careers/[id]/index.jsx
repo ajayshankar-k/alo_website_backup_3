@@ -5,10 +5,192 @@ import { useRouter } from "next/router";
 import Button from "@/components/common/button";
 import BaseUrl from "@/pages/api/BaseUrl";
 import bullets from '@/styles/assets/170.svg'
+import resumeupload from '@/styles/assets/171.svg'
+import { toast } from "react-toastify";
 
 const Index = () => {
+  const [submitLoad, setSubmitLoad] = useState(false)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobileNo: "",
+    appliedRole:"",
+    experience: "",
+    address: "",
+    resume: null,
+  });
+
+  let lastToastTime = 0;
+  const debounceToast = (message) => { // debouncing toast
+      const now = Date.now();
+      if (now - lastToastTime > 2000) { 
+          toast.error(message);
+          lastToastTime = now;
+      }
+  }; 
+
+  const handleSubmit = async () => {
+    try {
+      setSubmitLoad(true);
+      const formNamePattern = /[`!@#$%^&*()_\-+=\[\]{};':"\\|,.<>\/?~0-9]/g;
+      if (
+        formData.name.trim() !== "" &&
+        formNamePattern.test(formData.name) === false
+      ) {
+        const formEmailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const formEmailPatternTwo = / /g;
+        if (
+          formEmailPattern.test(formData.email) === true &&
+          formEmailPatternTwo.test(formData.email) === false &&
+          formData.email.trim() !== ""
+        ) {
+          const phonePattern = /^\+?[0-9]+$/;
+          if (
+            phonePattern.test(formData.mobileNo) === true &&
+            formData.mobileNo.trim() !== "" &&
+            formData.mobileNo.length >= 10
+          ) {
+            if (formData.appliedRole.trim() !== "") { // Validation for applied role field moved here
+              if (formData.experience.trim() !== "") {
+                if (formData.address.trim() !== "") {
+                  if (formData.resume) {
+                    // const response = await BaseUrl.post('/career/send', formData);
+                    toast.success("Form submitted successfully");
+                    console.log(formData)
+                    setFormData({
+                      name: "",
+                      email: "",
+                      mobileNo: "",
+                      appliedRole: "",
+                      experience: "",
+                      address: "",
+                      resume: null,
+                    });
+                    setFileName('Choose or drag and drop your resume')
+                  } else {
+                    debounceToast("Upload a PDF file!");
+                  }
+                } else {
+                  debounceToast("Enter your address!");
+                }
+              } else {
+                debounceToast("Enter your experience!");
+              }
+            } else {
+              debounceToast("Enter a role!");
+            }
+          } else {
+            debounceToast("Enter a valid phone number!");
+          }
+        } else {
+          debounceToast("Enter a valid email!");
+        }
+      } else {
+        debounceToast("Enter a valid name!");
+      }
+      setSubmitLoad(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Error on submitting form!");
+      setSubmitLoad(false);
+    }
+  };
+  
+
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    let numericValue;
+    if (name === "mobileNo") {
+        // Replace all non-digit characters except the first '+' symbol
+        numericValue = value.replace(/[^+\d]|(?!^)\+/g, "");
+    } else {
+        numericValue = value;
+    }
+    setFormData({
+        ...formData,
+        [name]: numericValue,
+    });
+  };
+
   const router = useRouter();
   const { id } = router.query;
+  const [fileName, setFileName] = useState('Choose or drag and drop your resume');
+
+  const handleDragOver = (event) => {
+    event.preventDefault(); // Prevent default behavior
+  };
+
+  const handleDrop = async(event) => {
+    event.preventDefault(); // Prevent default behavior
+    try {
+      setSubmitLoad(true)
+      const file = event.dataTransfer.files[0];
+  
+      if (file && file.type === 'application/pdf') {
+        setFileName(file.name)
+        const formDataObject = new FormData();
+        formDataObject.append('file', file);
+  
+        const response = await BaseUrl.post('/file/upload', formDataObject,{
+          headers:{
+            "Content-Type":"multipart/form-data"
+          }
+        });
+        setFormData({
+          ...formData,
+          resume: response.data.data.Location,
+        })  
+      } else {
+        setFileName('Choose or drag and drop your resume')
+        e.target.value = "";
+        setFormData({
+          ...formData,
+          resume:null,
+        })
+        toast.error('Invalid file type. Please upload a PDF file.');
+      }
+      setSubmitLoad(false)
+    } catch (error) {
+      console.log(error);
+      setSubmitLoad(false)
+    }
+  };
+
+  const handleFileChange = async (e) =>{
+    try {
+      setSubmitLoad(true)
+      const file = e.target.files[0];
+  
+      if (file && file.type === 'application/pdf') {
+        setFileName(file.name)
+        const formDataObject = new FormData();
+        formDataObject.append('file', file);
+  
+        const response = await BaseUrl.post('/file/upload', formDataObject,{
+          headers:{
+            "Content-Type":"multipart/form-data"
+          }
+        });
+        setFormData({
+          ...formData,
+          resume: response.data.data.Location,
+        })  
+      } else {
+        setFileName('Choose or drag and drop your resume')
+        e.target.value = "";
+        setFormData({
+          ...formData,
+          resume:null,
+        })
+        toast.error('Invalid file type. Please upload a PDF file.');
+      }
+      setSubmitLoad(false)
+    } catch (error) {
+      console.log(error);
+      setSubmitLoad(false)
+    }
+    
+  }
 
   const [careerForm,setCareerForm] = useState([])
   const handleClick = () =>{
@@ -142,14 +324,20 @@ const Index = () => {
           <div className="applynow_form_container">
             <h2>Apply Now</h2>
             <div className="applynow_Form">
-              <input placeholder="Full Name"/><br/>
-              <input placeholder="Email"/><br/>
-              <input placeholder="Phone Number"/><br/>
-              <input placeholder="Applying For"/><br/>
-              <input placeholder="Experience"/><br/>
-              <input placeholder="Address"/><br/>
-              <input type="file" /><br/>
-              <Button label='Apply'/>
+              <input onChange={handleChangeInput} value={formData.name} name="name" placeholder="Full Name"/><br/>
+              <input onChange={handleChangeInput} value={formData.email} name="email" placeholder="Email"/><br/>
+              <input onChange={handleChangeInput} value={formData.mobileNo} name="mobileNo" placeholder="Phone Number"/><br/>
+              <input onChange={handleChangeInput} value={formData.appliedRole} name="appliedRole" placeholder="Applying For"/><br/>
+              <input onChange={handleChangeInput} value={formData.experience} name="experience" placeholder="Experience"/><br/>
+              <input onChange={handleChangeInput} value={formData.address} name="address" placeholder="Address"/><br/>
+              <div className="resume_upload" onDragOver={handleDragOver} onDrop={handleDrop}>
+                <label className="resume-input" for="resume-input">
+                  <img src={resumeupload.src} alt={resumeupload.src}/>
+                  <p>{fileName}</p>
+                </label>
+                <input accept=".pdf" onChange={handleFileChange} name="resume" type="file" id="resume-input" /><br/>
+              </div>
+              <button disabled={submitLoad === true ?'true':''} onClick={handleSubmit}>{submitLoad?'Loading...':'Apply'}</button>
             </div>
           </div>
       </div>

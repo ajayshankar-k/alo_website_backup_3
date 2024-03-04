@@ -3367,7 +3367,7 @@ const Careers = () => {
             <div className="application_form_inputs">
               <label>Full name:</label>
               <input
-                type="text"
+                type="text" 
                 value={formData.name}
                 required
                 name="name"

@@ -31,6 +31,10 @@ const WebHeader = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const [showAboutUs,setShowAbout] = useState(false)
+  const [showServices,setShowServices] = useState(false)
+  const [showProducts,setShowProducts] = useState (false)
+
   const countryCodes = require("country-codes-list");
 
   let lastToastTime = 0;
@@ -216,35 +220,35 @@ const WebHeader = () => {
               <NavLink href="/" text="Home" />
             </li>
             <li>
-              <div className="about-us-title">
+              <div onMouseEnter={()=>setShowAbout(true)} onMouseLeave={()=>setShowAbout(false)} className="about-us-title"> 
                 <span>About Us</span>{" "}
                 <img src={dropDownArrow.src} alt={dropDownArrow.src} />
               </div>
-              <div  className="nav_drop_about" >
-                    <p><Link href="/about-us" >Our Story</Link></p>
-                    <p className="about_drop_products">Products <img src={sideArrow.src} alt={sideArrow.src} /></p>
-                    <div className="subdrop">
-                      <p>Alo Invoice</p>
+              <div style={{display:showAboutUs?'flex':'none'}} onMouseEnter={()=>setShowAbout(true)} onMouseLeave={()=>setShowAbout(false)} className="nav_drop_about" >
+                    <p onClick={()=>setShowAbout(false)}><Link href="/about-us" >Our Story</Link></p>
+                    <p onMouseEnter={()=>setShowProducts(true)} onMouseLeave={()=>setShowProducts(false)} className="about_drop_products">Products <img src={sideArrow.src} alt={sideArrow.src} /></p>
+                    <div style={{display:showProducts?'block':'none'}} onMouseEnter={()=>setShowProducts(true)} onMouseLeave={()=>setShowProducts(false)} className="subdrop">
+                      <p >Alo Invoice</p>
                       <p>Fast X</p>
                       <p>Alo Foodie</p>
                     </div>
-                    <p ><Link href="/events">Events</Link></p>
+                    <p onClick={()=>setShowAbout(false)}><Link href="/events">Events</Link></p>
                     {/* <p ><Link href="/">Our Clients</Link></p> */}
                 </div>
             </li>
             <li>
        
-                  <div className="service-title">
+                  <div onMouseEnter={()=>setShowServices(true)} onMouseLeave={()=>setShowServices(false)} className="service-title">
                     <span>Services</span>{" "}
                     <img src={dropDownArrow.src} alt={dropDownArrow.src} />
                   </div>
-                  <div  className="nav_drop_service" >
-                    <p><Link href="/AI-services">AI Service</Link></p>
-                    <p><Link href="/mobile-app-development">Mobile App Development</Link></p>
-                    <p><Link href="/website-development">Website Development</Link></p>
-                    <p><Link href="/blockchain-development">Blockchain Development</Link></p>
-                    <p><Link href="/Products-and-trials">All Products & Trials</Link></p>
-                    <p><Link href="/IT-Consulting">IT Consulting</Link></p>
+                  <div onMouseEnter={()=>setShowServices(true)} onMouseLeave={()=>setShowServices(false)} style={{display:showServices?'flex':'none'}} className="nav_drop_service" >
+                    <p onClick={()=>setShowServices(false)}><Link href="/AI-services">AI Service</Link></p>
+                    <p onClick={()=>setShowServices(false)}><Link href="/mobile-app-development">Mobile App Development</Link></p>
+                    <p onClick={()=>setShowServices(false)}><Link href="/website-development">Website Development</Link></p>
+                    <p onClick={()=>setShowServices(false)}><Link href="/blockchain-development">Blockchain Development</Link></p>
+                    <p onClick={()=>setShowServices(false)}><Link href="/Products-and-trials">All Products & Trials</Link></p>
+                    <p onClick={()=>setShowServices(false)}><Link href="/IT-Consulting">IT Consulting</Link></p>
                   </div>
                 
             </li>

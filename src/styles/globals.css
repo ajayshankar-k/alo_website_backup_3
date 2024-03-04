@@ -277,12 +277,14 @@ button {
 
 .subdrop{
   position: absolute;
-  left: 130px;
+  height: max-content;
+  top: 50px;
+  left: 132px;
   bottom: 20px;
   padding: 10px;
   background-color: #ffffff;
   width: 120px;
-  display: none;
+  /* display: none; */
   border-top: 3px solid #009dff;
 
 }
@@ -304,7 +306,7 @@ button {
   transition: color 200ms ease-in-out;
 }
 .about_drop_products:hover + .subdrop,.subdrop:hover{
-  display: block;
+  /* display: block; */
   
 }
 
@@ -327,7 +329,8 @@ button {
   background-color: #fff;
   padding: 20px 0px 20px 20px;
   width: 130px;
-  display: none; 
+  /* display: none;  */
+  /* display: flex; */
   flex-direction: column;
   gap: 20px;
   border-top: 3px solid #009dff;
@@ -339,7 +342,7 @@ button {
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
   background-color: #fff;
   padding: 20px;
-  display: none; 
+  /* display: none;  */
   flex-direction: column;
   gap: 20px;
   border-top: 3px solid #009dff;
@@ -351,7 +354,7 @@ button {
 }
 
 .about-us-title:hover + .nav_drop_about,.nav_drop_about:hover{
-  display: flex;
+  /* display: flex; */
 }
 
 .nav_drop_about a:hover {
@@ -361,7 +364,7 @@ button {
 
 .service-title:hover + .nav_drop_service,
 .nav_drop_service:hover {
-  display: flex; 
+  /* display: flex;  */
 }
 
 .nav_drop_service a:hover {
@@ -6291,6 +6294,34 @@ mobile app crafting section end */
   padding: 50px 0px;
   display: flex;
   justify-content: center;
+}
+
+.applynow_Form .resume_upload>input {
+  display: none;
+}
+
+.applynow_Form .resume_upload{
+  display: flex;
+  align-items: center;
+  cursor: none;
+  justify-content: center;
+  width: 100%;
+}
+.applynow_Form .resume_upload .resume-input{
+  background: #FFEEEE;
+  border: 1px dotted #faadad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.applynow_Form .resume_upload img{
+  width: 40px;
 }
 
 
