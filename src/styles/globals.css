@@ -4723,10 +4723,15 @@ mobile app crafting section end */
     font-size: 35px;
   }
   
+  
 }
 @media screen and (max-width:414px) {
-  .webdev_banner_leftblock h2{
-    font-size: 30px;
+  .webdev_banner_leftblock h2,.webdev_banner_container .webdev_banner_title span{
+    font-size: 26px !important;
+  }
+  .webdev_banner_leftblock h1{
+    font-size: 23px !important;
+    
   }
   
 }
