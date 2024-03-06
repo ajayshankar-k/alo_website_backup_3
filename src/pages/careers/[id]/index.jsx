@@ -343,12 +343,12 @@ const Index = () => {
           <div className="applynow_form_container">
             <h2>Apply Now</h2>
             <div className="applynow_Form">
-              <input onChange={handleChangeInput} value={formData.name} name="name" placeholder="Full Name"/><br/>
-              <input onChange={handleChangeInput} value={formData.email} name="email" placeholder="Email"/><br/>
-              <input onChange={handleChangeInput} value={formData.mobileNo} maxLength='15' name="mobileNo" placeholder="Phone Number"/><br/>
-              <input  value={`Applying for : ${formData.appliedRole}`} disabled='true' name="appliedRole" placeholder="Applying For"/><br/>
-              <input onChange={handleChangeInput} value={formData.experience} name="experience" placeholder="Experience"/><br/>
-              <input onChange={handleChangeInput} value={formData.address} name="address" placeholder="Address"/><br/>
+              <input style={{cursor:'none'}} onChange={handleChangeInput} value={formData.name} name="name" placeholder="Full Name"/><br/>
+              <input style={{cursor:'none'}} onChange={handleChangeInput} value={formData.email} name="email" placeholder="Email"/><br/>
+              <input style={{cursor:'none'}} onChange={handleChangeInput} value={formData.mobileNo} maxLength='15' name="mobileNo" placeholder="Phone Number"/><br/>
+              <input style={{color:'grey',cursor:'none'}}  value={`Applying for - ${formData.appliedRole}`} disabled='true' name="appliedRole" placeholder="Applying For"/><br/>
+              <input style={{cursor:'none'}} onChange={handleChangeInput} value={formData.experience} name="experience" placeholder="Experience"/><br/>
+              <input style={{cursor:'none'}} onChange={handleChangeInput} value={formData.address} name="address" placeholder="Address"/><br/>
               <div className="resume_upload" onDragOver={handleDragOver} onDrop={handleDrop}>
                 <label className="resume-input" for="resume-input">
                   <img src={resumeupload.src} alt={resumeupload.src}/>
