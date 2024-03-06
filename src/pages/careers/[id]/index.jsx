@@ -54,9 +54,9 @@ const Index = () => {
               if (formData.experience.trim() !== "") {
                 if (formData.address.trim() !== "") {
                   if (formData.resume) {
-                    const response = await BaseUrl.post('/career/send', formData);
+                    // const response = await BaseUrl.post('/career/send', formData);
                     toast.success("Form submitted successfully");
-                    // console.log(formData)
+                    console.log(formData)
                     setFormData({
                       name: "",
                       email: "",
@@ -199,8 +199,10 @@ const Index = () => {
     const careerApi = async() =>{
     try{
       const response = await BaseUrl.get('/jobs?type=web')
-      // console.log(response.data.data.jobList.find(job=>job._id === id))
+      const foundJob = response.data.data.jobList.find(job => job._id === id);
+      console.log(response.data.data.jobList.find(job=>job._id === id))
       setCareerForm(response.data.data.jobList.find(job=>job._id === id))
+      setFormData({...formData,appliedRole:careerForm.jobRole})
     }catch(error){
       console.log(error)
     }
@@ -332,9 +334,7 @@ const Index = () => {
         </div>
       </div>
       
-      <div className="applynow_form_bg">
-
-     </div>
+      <div className="applynow_form_bg"></div>
       <div className="applynow_form" id="applynow_form">
           <div className="applynow_form_container">
             <h2>Apply Now</h2>
@@ -342,7 +342,7 @@ const Index = () => {
               <input onChange={handleChangeInput} value={formData.name} name="name" placeholder="Full Name"/><br/>
               <input onChange={handleChangeInput} value={formData.email} name="email" placeholder="Email"/><br/>
               <input onChange={handleChangeInput} value={formData.mobileNo} maxLength='15' name="mobileNo" placeholder="Phone Number"/><br/>
-              <input onChange={handleChangeInput} value={formData.appliedRole} name="appliedRole" placeholder="Applying For"/><br/>
+              <input value={`Applying for : ${formData.appliedRole}`} disabled='true' name="appliedRole" placeholder="Applying For"/><br/>
               <input onChange={handleChangeInput} value={formData.experience} name="experience" placeholder="Experience"/><br/>
               <input onChange={handleChangeInput} value={formData.address} name="address" placeholder="Address"/><br/>
               <div className="resume_upload" onDragOver={handleDragOver} onDrop={handleDrop}>
