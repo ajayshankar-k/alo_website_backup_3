@@ -30,7 +30,7 @@ const WebFooter = () => {
                             <a style={{color:'black'}} href={`mailto:${email}`}>{email}</a>
                         </h2>
 
-                    </div>
+                    </div> 
                 </div>
             </div>
             <div className="footer">
@@ -82,9 +82,9 @@ const WebFooter = () => {
                 <div className="footer-content">
                     <h3>Product</h3>
                     <ul>
-                        <li><HyperLink href="/" text="Alo Invoice" /></li>
-                        <li><HyperLink href="/" text="Fast X" /></li>
-                        <li><HyperLink href="/" text="Alo Foodie" /></li>
+                        <li><HyperLink href="https://play.google.com/store/apps/details?id=com.alo_invoice.restaurant" text="Alo Invoice" /></li>
+                        <li><HyperLink href="https://play.google.com/store/apps/details?id=com.fastx.consumer" text="Fast X" /></li>
+                        <li><HyperLink href="https://play.google.com/store/apps/details?id=com.ALO_Foodie_alo_foodie" text="Alo Foodie" /></li>
                     </ul>
                 </div>
             </div>

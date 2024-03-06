@@ -155,7 +155,7 @@ const WebHeader = () => {
           //   debounceToast("Select a country code!");
           // }
         } else {
-          debounceToast("Enter a valid email!");
+          debounceToast("Enter a valid email!"); 
         }
       } else {
         debounceToast("Enter a valid name!");
@@ -228,9 +228,9 @@ const WebHeader = () => {
                     <p onClick={()=>setShowAbout(false)}><Link href="/about-us" >Our Story</Link></p>
                     <p onMouseEnter={()=>setShowProducts(true)} onMouseLeave={()=>setShowProducts(false)} className="about_drop_products">Products <img src={sideArrow.src} alt={sideArrow.src} /></p>
                     <div style={{display:showProducts?'block':'none'}} onMouseEnter={()=>setShowProducts(true)} onMouseLeave={()=>setShowProducts(false)} className="subdrop">
-                      <p >Alo Invoice</p>
-                      <p>Fast X</p>
-                      <p>Alo Foodie</p>
+                      <Link href='https://play.google.com/store/apps/details?id=com.alo_invoice.restaurant'><p >Alo Invoice</p></Link>
+                      <Link href='https://play.google.com/store/apps/details?id=com.fastx.consumer'><p>Fast X</p></Link>
+                      <Link href='https://play.google.com/store/apps/details?id=com.ALO_Foodie_alo_foodie'><p>Alo Foodie</p></Link>
                     </div>
                     <p onClick={()=>setShowAbout(false)}><Link href="/events">Events</Link></p>
                     {/* <p ><Link href="/">Our Clients</Link></p> */}
@@ -409,13 +409,13 @@ const WebHeader = () => {
             <li>
               <NavLink onClick={toggleDrawers} href="/careers" text="Careers" />
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 onClick={toggleDrawers}
                 href="/Products"
                 text="Products"
               />
-            </li>
+            </li> */}
             <li>
               <NavLink
                 onClick={toggleDrawers}
