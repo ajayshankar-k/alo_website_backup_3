@@ -5975,11 +5975,12 @@ mobile app crafting section end */
 }
 
 .products_section{
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .AloInvoice{
@@ -6018,10 +6019,12 @@ mobile app crafting section end */
 .aloinvoice_leftblock,.fastx_rightblock{
   width: 40vw;
   color: #fff;
+  padding: 100px 0px;
 }
 .alofoodie_leftblock{
   width: 40vw;
   color: #2B2B2B;
+  padding: 100px 0px;
 }
 
 
@@ -6150,6 +6153,10 @@ mobile app crafting section end */
   }
   .aloinvoice_leftblock,.fastx_rightblock,.alofoodie_leftblock{
     width: 100%;
+    padding: 0px;
+  }
+  .aloinvoice_rightblock,.fastx_leftblock,.alofoodie_rightblock{
+    align-self: center;
   }
 }
 

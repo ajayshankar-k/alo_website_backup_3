@@ -40,29 +40,32 @@ const Products = () => {
     };
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId, offset = 0) => {
     const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: sectionTop + offset, behavior: 'smooth' });
   };
+  
+  
 
   return (
     <div className="products_section_wrapper">
       <div className="products_nav">
         <div className="produts_nav_container">
           <h2
-            onClick={() => scrollToSection("AloInvoice")}
+            onClick={() => scrollToSection("AloInvoice",-100)}
             className={activeSection === "AloInvoice" ? "active" : ""}
           >
             Alo Invoice
           </h2>
           <h2
-            onClick={() => scrollToSection("FastX")}
+            onClick={() => scrollToSection("FastX",-160)}
             className={activeSection === "FastX" ? "active" : ""}
           >
             Fast X
           </h2>
           <h2
-            onClick={() => scrollToSection("AloFoodie")}
+            onClick={() => scrollToSection("AloFoodie",-100)}
             className={activeSection === "AloFoodie" ? "active" : ""}
           >
             Alo Foodie
@@ -71,6 +74,7 @@ const Products = () => {
       </div>
 
       <div id="AloInvoice" ref={ref => sectionRefs.current[0] = ref} className="products_section AloInvoice">
+        <p >hello</p>
         <div className="aloinvoice_wrapper">
           <div className="aloinvoice_leftblock">
             <h3>
