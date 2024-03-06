@@ -13,7 +13,7 @@ const WebFooter = () => {
 
     const router = useRouter();
 
-
+    const email = useRouter().pathname !== "/careers" ? "contact@aloinfotech.in" : "hr@aloinfotech.in";
 
     return (
         <footer>
@@ -25,7 +25,11 @@ const WebFooter = () => {
                         </Link>
                     </div>
                     <div className="email">
-                        <h2>{router.pathname !== "/careers" ? "contact@aloinfotech.in" : "hr@aloinfotech.in"}</h2>
+                        {/* <h2>{router.pathname !== "/careers" ? "contact@aloinfotech.in" : "hr@aloinfotech.in"}</h2> */}
+                        <h2>
+                            <a style={{color:'black'}} href={`mailto:${email}`}>{email}</a>
+                        </h2>
+
                     </div>
                 </div>
             </div>
