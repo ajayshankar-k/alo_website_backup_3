@@ -130,7 +130,8 @@ const Index = () => {
       const file = event.dataTransfer.files[0];
   
       if (file && file.type === 'application/pdf') {
-        setFileName(file.name)
+        const fileName = file.name.length > 20 ? file.name.slice(0, 20) + '...' : file.name;
+        setFileName(fileName)
         const formDataObject = new FormData();
         formDataObject.append('file', file);
   
@@ -165,7 +166,8 @@ const Index = () => {
       const file = e.target.files[0];
   
       if (file && file.type === 'application/pdf') {
-        setFileName(file.name)
+        const fileName = file.name.length > 20 ? file.name.slice(0, 20) + '...' : file.name;
+        setFileName(fileName)
         const formDataObject = new FormData();
         formDataObject.append('file', file);
   
