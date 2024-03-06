@@ -4,6 +4,7 @@ import Image from '@/components/common/image';
 import Linkedin from '@/styles/assets/link.svg';
 import Facebook from '@/styles/assets/fb.svg';
 import Instagram from '@/styles/assets/insta.svg';
+import x from '@/styles/assets/x.svg';
 import Logo from '@/styles/assets/logo.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -45,7 +46,9 @@ const WebFooter = () => {
                         <li>TamilNadu 629002</li>
                     </ul>
                     </Link>
-                    <span><HyperLink href="https://www.facebook.com/profile.php?id=100092521095313&mibextid=eHce3h" text={<Image src={Facebook.src} alt={Facebook.src} />} target="_" /><HyperLink href="https://www.instagram.com/alo_info_tech?igsh=ZGNjOWZkYTE3MQ==" text={<Image src={Instagram.src} alt={Instagram.src} />} target="__" /><HyperLink href="https://www.linkedin.com/company/alo-info-tech/" text={<Image src={Linkedin.src} alt={Linkedin.src} />} target="___" /></span>
+                    <span><HyperLink href="https://www.facebook.com/profile.php?id=100092521095313&mibextid=eHce3h" text={<Image src={Facebook.src} alt={Facebook.src} />} target="_" /><HyperLink href="https://www.instagram.com/alo_info_tech?igsh=ZGNjOWZkYTE3MQ==" text={<Image src={Instagram.src} alt={Instagram.src} />} target="__" /><HyperLink href="https://www.linkedin.com/company/alo-info-tech/" text={<Image src={Linkedin.src} alt={Linkedin.src} />} target="___" />
+                    <HyperLink href="https://twitter.com/aloinfotech" text={<Image src={x.src} alt={x.src} />} target="___" />
+                    </span>
                 </div>
                 <div className="footer-content">
                     <h3>Links</h3>
