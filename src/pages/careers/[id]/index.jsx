@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect,useState,useRef} from "react";
 import { Fragment } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -67,6 +67,7 @@ const Index = () => {
                       address: "",
                       resume: null,
                     });
+                    fileInputRef.current.value = "";
                     setFileName('Choose or drag and drop your resume')
                   } else {
                     debounceToast("Upload a PDF file!");
@@ -116,6 +117,7 @@ const Index = () => {
   const router = useRouter();
   const { id } = router.query;
   const [fileName, setFileName] = useState('Choose or drag and drop your resume');
+  const fileInputRef = useRef(null);
 
   const handleDragOver = (event) => {
     event.preventDefault(); // Prevent default behavior
@@ -352,7 +354,7 @@ const Index = () => {
                   <img src={resumeupload.src} alt={resumeupload.src}/>
                   <p>{fileName}</p>
                 </label>
-                <input accept=".pdf" onChange={handleFileChange} name="resume" type="file" id="resume-input" /><br/>
+                <input ref={fileInputRef} accept=".pdf" onChange={handleFileChange} name="resume" type="file" id="resume-input" /><br/>
               </div>
               <button disabled={submitLoad === true ?'true':''} onClick={handleSubmit}>{submitLoad?'Loading...':'Apply'}</button>
             </div>
