@@ -2437,6 +2437,19 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
   width: 75vw;
 }
 
+.currently_no_opening{
+  text-align: center;
+  font-size: 24px;
+  text-align: center;
+    font-style: normal;
+    margin-bottom: 10px;
+    line-height: normal;
+    background: linear-gradient(91deg, #0B58AB 0.55%, #4CA9EC 65.82%, #35BCFC 111.85%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .job .job-blog .job-split {
   display: grid;
   grid-template-columns: auto auto auto;

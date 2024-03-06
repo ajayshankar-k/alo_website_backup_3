@@ -190,7 +190,7 @@ const Careers = () => {
     const careerApi = async() =>{
     try{
       const response = await BaseUrl.get('/jobs?type=web')
-      // console.log(response.data.data.jobList)
+      
       setCareerForm(response.data.data.jobList)
     }catch(error){
       console.log(error)
@@ -3202,7 +3202,7 @@ const Careers = () => {
           Help us redefine the landscape of software solutions
         </h3>
         <div className="job-blog">
-          
+          {careerForm && careerForm.length===0? <p className="currently_no_opening">Currently No Openings</p> : 
           <div className="job-split">
             {careerForm.map((items,index)=>(
             <Link key={items._id} href={`/careers/${items._id}`}>
@@ -3229,49 +3229,8 @@ const Careers = () => {
             </div>
             </Link>
             ))}
-            {/* <div onClick={onOpenModal} className="job-two">
-              <p>Full time</p>
-              <h3>Angular Developer</h3>
-              <p>
-                Apply Now
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.05305 2.15824L14.2961 9.41424C14.3612 9.47654 14.413 9.55154 14.4481 9.63461C14.4832 9.71768 14.5008 9.80707 14.5001 9.89724C14.5003 10.0833 14.427 10.262 14.2961 10.3942C11.6761 12.9502 9.15105 15.4172 6.72105 17.7952C6.59605 17.9122 6.09605 18.2032 5.71005 17.7712C5.32405 17.3382 5.55805 16.9612 5.71005 16.8052L12.7781 9.89724L6.03105 3.13824C5.78505 2.79924 5.80505 2.48624 6.09105 2.19924C6.37705 1.91224 6.69805 1.89824 7.05305 2.15824Z"
-                    fill="black"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div onClick={onOpenModal} className="job-three">
-              <p>Full time</p>
-              <h3>React Developer</h3>
-              <p>
-                Apply Now
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.05305 2.15824L14.2961 9.41424C14.3612 9.47654 14.413 9.55154 14.4481 9.63461C14.4832 9.71768 14.5008 9.80707 14.5001 9.89724C14.5003 10.0833 14.427 10.262 14.2961 10.3942C11.6761 12.9502 9.15105 15.4172 6.72105 17.7952C6.59605 17.9122 6.09605 18.2032 5.71005 17.7712C5.32405 17.3382 5.55805 16.9612 5.71005 16.8052L12.7781 9.89724L6.03105 3.13824C5.78505 2.79924 5.80505 2.48624 6.09105 2.19924C6.37705 1.91224 6.69805 1.89824 7.05305 2.15824Z"
-                    fill="black"
-                  />
-                </svg>
-              </p>
-            </div> */}
           </div>
+        }
 {/* 
           <div onClick={onOpenModal} className="job-split">
             <div className="job-four">
