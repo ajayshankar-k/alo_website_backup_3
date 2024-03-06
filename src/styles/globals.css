@@ -4438,7 +4438,8 @@ mobile app crafting section end */
 }
 
 .webdev_banner_container{
-  height: 90vh;
+  /* height: 90vh; */
+  padding: 100px 0px;
   width: 90vw;
   display: flex;
   margin: auto;
@@ -5971,6 +5972,7 @@ mobile app crafting section end */
 
 .products_nav .produts_nav_container .active{
   background-color: #0F20BF !important;
+
   
 }
 
