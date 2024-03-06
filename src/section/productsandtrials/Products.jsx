@@ -74,7 +74,7 @@ const Products = () => {
       </div>
 
       <div id="AloInvoice" ref={ref => sectionRefs.current[0] = ref} className="products_section AloInvoice">
-        <p >hello</p>
+      
         <div className="aloinvoice_wrapper">
           <div className="aloinvoice_leftblock">
             <h3>
