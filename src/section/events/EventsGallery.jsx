@@ -104,14 +104,15 @@ const EventsGallery = () => {
       'Office Celebration',
       'Team Out'
     ]
+
+
   
     const handleLoad = () =>{
       setLoading(false)
     }
   
     // images maped
-  
-    const aloversary2k22 = [
+    const aloversary2k22Copy= [
       {src:aloversary2k221.src},
       {src:aloversary2k222.src},
       {src:aloversary2k223.src},
@@ -120,9 +121,13 @@ const EventsGallery = () => {
       {src:alo20226.src},
       {src:alo20227.src},
       {src:alo20228.src},
-    ].slice(0,imageSlice)
+    ]
   
-    const pongal2k23 = [
+  
+    const aloversary2k22 = aloversary2k22Copy.slice(0,imageSlice)
+
+   
+    const pongal2k23Copy = [
       {src:pongal2k231.src},
       {src:pongal2k232.src},
       {src:pongal5.src},
@@ -130,9 +135,11 @@ const EventsGallery = () => {
       {src:pongal7.src},
       {src:pongal2k241.src},
       {src:pongal2k242.src},
-    ].slice(0,imageSlice)
+    ]
+
+    const pongal2k23 = pongal2k23Copy.slice(0,imageSlice)
   
-    const onam2023 = [
+    const onam2023Copy = [
       {src: onam20231.src},
       {src: onam20232.src},
       {src: onam20233.src},
@@ -141,9 +148,11 @@ const EventsGallery = () => {
       {src: onam6.src},
       {src: onam7.src},
       {src: onam8.src},
-    ].slice(0,imageSlice)
+    ]
+
+    const onam2023 = onam2023Copy.slice(0,imageSlice)
   
-    const inauguration = [
+    const inaugurationCopy = [
       {src: in10.src},
       {src: in2.src},
       {src: in3.src},
@@ -153,16 +162,20 @@ const EventsGallery = () => {
       {src: in7.src},
       {src: in8.src},
       {src: in9.src},
-    ].slice(0,imageSlice)
+    ]
 
-    const officeceleb = [
+    const inauguration = inaugurationCopy.slice(0,imageSlice)
+
+    const officecelebCopy = [
       {src: off1.src},
       {src: off2.src},
       {src: off3.src},
 
-    ].slice(0,imageSlice)
+    ]
 
-    const clgseminar = [
+    const officeceleb = officecelebCopy.slice(0,imageSlice)
+
+    const clgseminarCopy = [
       {src: clg1.src},
       {src: clg2.src},
       {src: clg3.src},
@@ -173,15 +186,20 @@ const EventsGallery = () => {
       {src: clg8.src},
       {src: clg9.src},
       {src: clg10.src},
-    ].slice(0,imageSlice)
-    const teamout = [
+    ]
+
+    const clgseminar = clgseminarCopy.slice(0,imageSlice)
+
+    const teamoutCopy = [
       {src: team1.src},
       {src: team2.src},
       {src: team3.src},
       {src: team4.src},
       {src: team5.src},
    
-    ].slice(0,imageSlice)
+    ]
+
+    const teamout = teamoutCopy.slice(0,imageSlice)
 
     useEffect(() => {
         setRefreshScroll(false)
@@ -227,7 +245,7 @@ const EventsGallery = () => {
               <img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
             ))} 
           </div>
-          {inauguration.length>=6?
+          {inaugurationCopy.length>=6 && inaugurationCopy.length>imageSlice ?
           <div className="event_loadmore">
           {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
           </div>
@@ -242,7 +260,7 @@ const EventsGallery = () => {
           <img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
         ))}
       </div>
-      {onam2023.length>=6?
+      {onam2023Copy.length>=6 && onam2023Copy.length>imageSlice?
           <div className="event_loadmore">
           {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
           </div>
@@ -257,7 +275,7 @@ const EventsGallery = () => {
         < img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
         ))}
       </div>
-      {pongal2k23.length>=6?
+      {pongal2k23Copy.length>=6 && pongal2k23Copy.length>imageSlice?
           <div className="event_loadmore">
           {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
           </div>
@@ -272,7 +290,7 @@ const EventsGallery = () => {
           <img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
         ))} 
       </div>
-      {aloversary2k22.length>=6?
+      {aloversary2k22Copy.length>=6 && aloversary2k22Copy.length>imageSlice?
           <div className="event_loadmore">
           {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
           </div>
@@ -287,7 +305,7 @@ const EventsGallery = () => {
           <img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
         ))} 
       </div>
-      {clgseminar.length>=6?
+      {clgseminarCopy.length>=6 && clgseminarCopy.length>imageSlice?
           <div className="event_loadmore">
           {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
           </div>
@@ -302,7 +320,7 @@ const EventsGallery = () => {
           <img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
         ))} 
       </div>
-      {officeceleb.length>=6?
+      {officecelebCopy.length>=6 && officecelebCopy.length>imageSlice?
         <div className="event_loadmore">
         {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
         </div>
@@ -317,7 +335,7 @@ const EventsGallery = () => {
           <img  key={image.src} onLoad={handleLoad} src={image.src} alt="" />
         ))} 
       </div>
-      {teamout.length>=6?
+      {teamoutCopy.length>=6 && teamoutCopy.length>imageSlice?
         <div className="event_loadmore">
         {loading ? "" : <Button onClick={()=>setSlicing(imageSlice+6)} label="Load more" />}
         </div>
