@@ -1530,6 +1530,16 @@ header .alo .alo-hyper .hide,header .alo .alo-hyper .hide_open {
   width: 70px;
 }
 
+.parent-card .card-img .one-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.parent-card .card-img .one-card button{
+  align-self: flex-start;
+}
+
 .parent-card .card-img .one-card h2 {
   color: #000;
   font-size: 20px;

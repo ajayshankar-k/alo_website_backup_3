@@ -246,23 +246,29 @@ const Contact = ({ openChat }) => {
             <div className="parent-card">
                 <div className="card-img">
                     <div className="one-card">
-                        <Image src={One.src} alt={One.src} />
-                        <h2>Partner Enquiry</h2>
-                        <p>Interested in partnering? Explore partnership possibilities with us. Lets create synergies together for mutual success. </p>
+                        <div>
+                            <Image src={One.src} alt={One.src} />
+                            <h2>Partner Enquiry</h2>
+                            <p>Interested in partnering? Explore partnership possibilities with us. Lets create synergies together for mutual success. </p>
+                        </div>
                         <Button onClick={()=>onOpenModal('1')} label="Get In Touch" />
                     </div>
                     <div className="border"></div>
                     <div className="one-card">
+                        <div>
                         <Image src={Two.src} alt={Two.src} />
                         <h2>Product Support</h2>
                         <p>Lost in the digital wilderness? Fear not! Our support wizards have GPS for your tech jungle. Get started and find your way to smooth sailing! </p>
+                        </div>
                         <Button onClick={openChat} label="Get Started" />
                     </div>
                     <div className="border"></div>
                     <div className="one-card">
+                        <div>
                         <Image src={Three.src} alt={Three.src} />
                         <h2>Sales Enquiry</h2>
                         <p>Curious about unleashing the sales magic? Lets turn questions into answers—Contact sales, let the wizardry begin! </p>
+                        </div>
                         <Button onClick={()=>onOpenModal('3')} label="Contact Sales" />
                     </div>
                 </div>
